@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="NIDHOIMI conçoit des sites vitrines, des catalogues de produits et des applications de gestion pour les commerçants et les entreprises.">
+
+    <meta name="theme-color" content="#ffffff">
+
+    <title>NIDHOIMI | Solutions numériques</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+    <style>
+
+        /* Photo de profil dans la section d'accueil */
+        .hero-visual {
+            position: relative;
+        }
+        .hero-profile-photo {
+            position: absolute;
+            top: -22px;
+            right: -12px;
+            z-index: 5;
+            width: 118px;
+            height: 118px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #ffffff;
+            background: #f1f5f9;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
+        }
+        .hero-profile-photo img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        @media (max-width: 768px) {
+            .hero-profile-photo {
+                width: 88px;
+                height: 88px;
+                top: -12px;
+                right: -5px;
+            }
+        }
+
+        .floating-whatsapp {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 9999;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #25D366;
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .22);
+            text-decoration: none;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .floating-whatsapp:hover,
+        .floating-whatsapp:focus-visible {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, .28);
+        }
+        .floating-whatsapp svg { width: 31px; height: 31px; fill: currentColor; }
+        .floating-whatsapp-label {
+            position: absolute;
+            right: 70px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            background: #fff;
+            color: #222;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .12);
+        }
+        @media (max-width: 480px) {
+            .floating-whatsapp { right: 15px; bottom: 15px; width: 54px; height: 54px; }
+            .floating-whatsapp-label { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================
+         BARRE DE NAVIGATION
+    ========================================== -->
+
+    <header class="header">
+        <nav class="navbar container">
+
+            <a href="#accueil" class="logo">
+                NIDHOIMI<span>.</span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Ouvrir le menu"
+                aria-expanded="false"
+                aria-controls="nav-menu">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+
+                <li><a href="#accueil" class="nav-link">Accueil</a></li>
+
+                <li><a href="#services" class="nav-link">Services</a></li>
+
+                <li><a href="#realisations" class="nav-link">Réalisations</a></li>
+
+                <li><a href="#apropos" class="nav-link">À propos</a></li>
+
+                <li>
+                    <a href="#contact" class="nav-contact">
+                        Parlons de votre projet
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- =========================================
+             SECTION ACCUEIL
+        ========================================== -->
+
+        <section class="hero section" id="accueil">
+
+            <div class="container hero-grid">
+
+                <div class="hero-content">
+
+                    <p class="eyebrow">
+                        SOLUTIONS NUMÉRIQUES POUR LES ENTREPRISES
+                    </p>
+
+                    <h1>
+                        Donnez une nouvelle dimension
+                        à votre <span>activité.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Je conçois des sites web, des catalogues de produits
+                        et des applications de gestion pour aider les
+                        commerçants et les entrepreneurs à développer
+                        leur activité.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a href="#services" class="button button-primary">
+                            Découvrir mes services
+                        </a>
+
+                        <a href="#realisations" class="button button-secondary">
+                            Voir mes réalisations
+                        </a>
+
+                    </div>
+
+                    <div class="hero-note">
+                        <span class="status-dot"></span>
+                        Des solutions adaptées à vos besoins
+                    </div>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="hero-profile-photo">
+                        <img src="assets/images/nidhoimi.jpg"
+                             alt="Photo professionnelle de Nidhoimi Moukallidou"
+                             loading="eager">
+                    </div>
+
+                    <div class="visual-card">
+
+                        <div class="visual-header">
+
+                            <div class="window-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="visual-content">
+
+                            <div class="visual-intro">
+                                <span class="visual-label">
+                                    SOLUTIONS DIGITALES
+                                </span>
+
+                                <h2>
+                                    Tout commence
+                                    par une bonne idée.
+                                </h2>
+
+                                <p>
+                                    Transformons vos besoins
+                                    en solutions concrètes.
+                                </p>
+                            </div>
+
+
+                            <div class="visual-services">
+
+                                <div class="visual-service">
+                                    <span class="service-icon">01</span>
+
+                                    <div>
+                                        <strong>Site web</strong>
+                                        <small>Votre présence en ligne</small>
+                                    </div>
+
+                                    <span class="arrow">↗</span>
+                                </div>
+
+
+                                <div class="visual-service">
+                                    <span class="service-icon">02</span>
+
+                                    <div>
+                                        <strong>Catalogue</strong>
+                                        <small>Vos produits en ligne</small>
+                                    </div>
+
+                                    <span class="arrow">↗</span>
+                                </div>
+
+
+                                <div class="visual-service">
+                                    <span class="service-icon">03</span>
+
+                                    <div>
+                                        <strong>Gestion</strong>
+                                        <small>Votre activité organisée</small>
+                                    </div>
+
+                                    <span class="arrow">↗</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="floating-badge">
+                        <span class="badge-symbol">✦</span>
+
+                        <div>
+                            <strong>Une solution adaptée</strong>
+                            <small>À vos objectifs</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             BANDEAU DE POSITIONNEMENT
+        ========================================== -->
+
+        <section class="trust-strip">
+
+            <div class="container trust-content">
+
+                <p>Des solutions numériques pour :</p>
+
+                <div class="trust-items">
+                    <span>Commerçants</span>
+                    <span>Entrepreneurs</span>
+                    <span>PME</span>
+                    <span>Prestataires de services</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             SECTION SERVICES
+        ========================================== -->
+
+        <section class="section services-section" id="services">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">MES SERVICES</p>
+
+                    <h2>
+                        La solution adaptée
+                        à votre <span>activité.</span>
+                    </h2>
+
+                    <p>
+                        Des offres simples pour vous aider à présenter
+                        vos services, vendre vos produits et mieux
+                        organiser votre activité.
+                    </p>
+
+                </div>
+
+
+                <div class="services-grid">
+
+                    <!-- Service 1 -->
+
+                    <article class="service-card">
+
+                        <div class="card-top">
+                            <span class="card-number">01</span>
+                            <span class="card-icon">↗</span>
+                        </div>
+
+                        <h3>Site vitrine</h3>
+
+                        <p>
+                            Présentez votre entreprise, vos services
+                            et vos coordonnées sur un site professionnel.
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>Présentation de votre activité</li>
+                            <li>Design adapté au mobile</li>
+                            <li>Coordonnées et contact WhatsApp</li>
+                        </ul>
+
+                        <div class="price-block">
+                            <span>À partir de</span>
+                            <strong>40 000 <small>FCFA</small></strong>
+                        </div>
+
+                        <a
+                            href="#contact"
+                            class="service-link"
+                            data-service="Site vitrine">
+
+                            Demander un devis <span>→</span>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- Service 2 -->
+
+                    <article class="service-card featured-card">
+
+                        <div class="popular-label">
+                            OFFRE CATALOGUE
+                        </div>
+
+                        <div class="card-top">
+                            <span class="card-number">02</span>
+                            <span class="card-icon">▦</span>
+                        </div>
+
+                        <h3>Catalogue de produits</h3>
+
+                        <p>
+                            Présentez vos articles, vos prix et vos photos
+                            dans un catalogue accessible en ligne.
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>Présentation des produits</li>
+                            <li>Catégories et prix</li>
+                            <li>Commandes via WhatsApp</li>
+                        </ul>
+
+                        <div class="price-block">
+                            <span>À partir de</span>
+                            <strong>30 000 <small>FCFA</small></strong>
+                        </div>
+
+                        <a
+                            href="#contact"
+                            class="service-link"
+                            data-service="Catalogue de produits">
+
+                            Demander un devis <span>→</span>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- Service 3 -->
+
+                    <article class="service-card">
+
+                        <div class="card-top">
+                            <span class="card-number">03</span>
+                            <span class="card-icon">▤</span>
+                        </div>
+
+                        <h3>Application de gestion</h3>
+
+                        <p>
+                            Organisez vos produits et suivez votre stock
+                            grâce à une application adaptée à vos besoins.
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>Gestion des produits</li>
+                            <li>Suivi des entrées et sorties</li>
+                            <li>Tableau de bord simplifié</li>
+                        </ul>
+
+                        <div class="price-block">
+                            <span>À partir de</span>
+                            <strong>50 000 <small>FCFA</small></strong>
+                        </div>
+
+                        <a
+                            href="#contact"
+                            class="service-link"
+                            data-service="Application de gestion">
+
+                            Demander un devis <span>→</span>
+
+                        </a>
+
+                    </article>
+
+                </div>
+
+                <p class="pricing-note">
+                    Les tarifs dépendent du périmètre du projet.
+                    Les fonctionnalités, les délais et les éventuels
+                    frais supplémentaires sont précisés avant le démarrage.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             SECTION RÉALISATIONS
+        ========================================== -->
+
+        <section class="section projects-section" id="realisations">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">MES RÉALISATIONS</p>
+                    <h2>
+                        Des idées transformées
+                        en <span>projets concrets.</span>
+                    </h2>
+                    <p>
+                        Découvrez quelques projets web réalisés : un site immobilier,
+                        une application de gestion et un catalogue de produits en ligne.
+                    </p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Projet 1 : site réel IMMOCOMOCO -->
+                    <article class="project-card">
+                        <a href="https://halifaoumar657-ai.github.io/IMMOCOMOCO/"
+                           target="_blank" rel="noopener noreferrer"
+                           class="project-visual project-visual-one"
+                           aria-label="Visiter le site IMMOCOMOCO"
+                           style="display:block; position:relative; overflow:hidden;">
+                            <img src="assets/images/immocomoco.png"
+                                 alt="Capture d’écran du site immobilier IMMOCOMOCO"
+                                 loading="lazy"
+                                 style="display:block; width:100%; height:100%; min-height:220px; object-fit:cover; object-position:top;">
+                            <span class="project-category"
+                                  style="position:absolute; top:16px; left:16px; z-index:1;">
+                                SITE IMMOBILIER
+                            </span>
+                        </a>
+
+                        <div class="project-info">
+                            <div>
+                                <h3>IMMOCOMOCO</h3>
+                                <p>
+                                    Un site web dédié à la présentation de services
+                                    immobiliers aux Comores.
+                                </p>
+                            </div>
+                            <span class="project-arrow" aria-hidden="true">↗</span>
+                        </div>
+
+                        <span class="project-status">Site accessible en ligne</span>
+                        <a href="https://halifaoumar657-ai.github.io/IMMOCOMOCO/"
+                           target="_blank" rel="noopener noreferrer"
+                           class="service-link">
+                            Visiter le site <span>→</span>
+                        </a>
+                    </article>
+
+                    <!-- Projet 2 : application personnelle de gestion de stock -->
+                    <article class="project-card">
+                        <div class="project-visual project-visual-three"
+                             style="position:relative; overflow:hidden;">
+                            <img src="assets/images/stock-dashboard.png"
+                                 alt="Capture du tableau de bord de l’application de gestion de stock"
+                                 loading="lazy"
+                                 style="display:block; width:100%; height:100%; min-height:220px; object-fit:cover; object-position:top;">
+                            <span class="project-category"
+                                  style="position:absolute; top:16px; left:16px; z-index:1;">
+                                APPLICATION WEB
+                            </span>
+                        </div>
+
+                        <div class="project-info">
+                            <div>
+                                <h3>Application de gestion de stock</h3>
+                                <p>
+                                    Une interface de démonstration conçue pour organiser
+                                    les produits et faciliter le suivi du stock.
+                                </p>
+                            </div>
+                            <span class="project-arrow" aria-hidden="true">↗</span>
+                        </div>
+
+                        <span class="project-status">Projet en démonstration locale</span>
+                        <a href="#contact" class="service-link"
+                           data-service="Application de gestion"
+                           aria-label="Demander une démonstration de l’application de gestion de stock">
+                            Demander une démonstration <span>→</span>
+                        </a>
+                    </article>
+
+                    <!-- Projet 3 : catalogue de produits URBAN STYLE -->
+                    <article class="project-card">
+                        <a href="https://halifaoumar657-ai.github.io/urban-style-catalogue/"
+                           target="_blank" rel="noopener noreferrer"
+                           class="project-visual project-visual-one"
+                           aria-label="Visiter le catalogue URBAN STYLE"
+                           style="display:block; position:relative; overflow:hidden;">
+                            <div style="display:flex; align-items:center; justify-content:center; min-height:220px; height:100%; background:linear-gradient(135deg, #171717, #454545); color:#fff; font-size:clamp(1.5rem, 4vw, 2.5rem); font-weight:800; letter-spacing:.12em;">
+                                URBAN STYLE
+                            </div>
+                            <span class="project-category"
+                                  style="position:absolute; top:16px; left:16px; z-index:1;">
+                                CATALOGUE EN LIGNE
+                            </span>
+                        </a>
+
+                        <div class="project-info">
+                            <div>
+                                <h3>URBAN STYLE</h3>
+                                <p>
+                                    Un catalogue de vêtements et d’accessoires avec
+                                    recherche, filtres par catégorie et commandes via WhatsApp.
+                                </p>
+                            </div>
+                            <span class="project-arrow" aria-hidden="true">↗</span>
+                        </div>
+
+                        <span class="project-status">Site accessible en ligne</span>
+                        <a href="https://halifaoumar657-ai.github.io/urban-style-catalogue/"
+                           target="_blank" rel="noopener noreferrer"
+                           class="service-link">
+                            Visiter le catalogue <span>→</span>
+                        </a>
+                    </article>
+                </div>
+
+                <p class="projects-note">
+                    IMMOCOMOCO et URBAN STYLE sont accessibles en ligne.
+                    L’application de gestion de stock est actuellement présentée comme un projet de démonstration.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- =========================================
+             SECTION À PROPOS
+        ========================================== -->
+
+        <section class="section about-section" id="apropos">
+
+            <div class="container about-grid">
+
+                <div class="about-visual">
+
+                    <div class="about-monogram">
+                        <span>N</span>
+                        <span class="monogram-dot">.</span>
+                    </div>
+
+                    <div class="about-caption">
+                        <span>WEB</span>
+                        <span>DIGITAL</span>
+                        <span>GESTION</span>
+                    </div>
+
+                </div>
+
+
+                <div class="about-content">
+
+                    <p class="eyebrow">À PROPOS</p>
+
+                    <h2>
+                        Le numérique au service
+                        de vos <span>ambitions.</span>
+                    </h2>
+
+                    <p>
+                        Je suis Nidhoimi, développeur de solutions numériques.
+                        Je conçois des sites web, des catalogues de produits
+                        et des applications de gestion pour les entrepreneurs
+                        et les petites entreprises.
+                    </p>
+
+                    <p>
+                        Mon objectif est de transformer les besoins de chaque
+                        client en outils numériques pratiques, accessibles
+                        et adaptés à son activité.
+                    </p>
+
+                    <div class="skills-list">
+
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Responsive design</span>
+                        <span>Gestion de stock</span>
+
+                    </div>
+
+                    <a href="#contact" class="button button-primary">
+                        Discutons de votre projet
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             SECTION PROCESSUS
+        ========================================== -->
+
+        <section class="section process-section" id="processus">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">COMMENT ÇA MARCHE ?</p>
+
+                    <h2>
+                        Un processus simple,
+                        de l'idée à la <span>livraison.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="process-grid">
+
+                    <article class="process-card">
+                        <span class="process-number">01</span>
+                        <h3>Échange</h3>
+                        <p>
+                            Nous discutons de votre activité,
+                            de vos besoins et de vos objectifs.
+                        </p>
+                    </article>
+
+                    <article class="process-card">
+                        <span class="process-number">02</span>
+                        <h3>Proposition</h3>
+                        <p>
+                            Nous définissons les fonctionnalités,
+                            le prix et le délai de réalisation.
+                        </p>
+                    </article>
+
+                    <article class="process-card">
+                        <span class="process-number">03</span>
+                        <h3>Réalisation</h3>
+                        <p>
+                            Je développe et teste la solution
+                            en fonction des besoins convenus.
+                        </p>
+                    </article>
+
+                    <article class="process-card">
+                        <span class="process-number">04</span>
+                        <h3>Livraison</h3>
+                        <p>
+                            Vous vérifiez le résultat et recevez
+                            votre solution selon les conditions convenues.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             APPEL À L'ACTION
+        ========================================== -->
+
+        <section class="cta-section">
+
+            <div class="container cta-content">
+
+                <div>
+                    <p class="eyebrow">VOTRE PROCHAIN PROJET</p>
+
+                    <h2>
+                        Parlons de votre idée.
+                    </h2>
+
+                    <p>
+                        Présentez-moi votre besoin et découvrons
+                        ensemble la solution adaptée à votre activité.
+                    </p>
+                </div>
+
+                <a href="#contact" class="button button-light">
+                    Démarrer un projet <span>→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             SECTION CONTACT
+        ========================================== -->
+
+        <section class="section contact-section" id="contact">
+
+            <div class="container contact-grid">
+
+                <div class="contact-content">
+
+                    <p class="eyebrow">CONTACT</p>
+
+                    <h2>
+                        Construisons votre
+                        prochain <span>projet.</span>
+                    </h2>
+
+                    <p>
+                        Remplissez le formulaire pour m’envoyer votre demande par e-mail,
+                        ou contactez-moi directement sur WhatsApp avec le bouton flottant.
+                    </p>
+
+                    <div class="contact-detail">
+
+                        <span class="contact-detail-icon">↗</span>
+
+                        <div>
+                            <strong>Échange direct</strong>
+                            <p>Discutons de votre projet et de vos objectifs.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-detail">
+
+                        <span class="contact-detail-icon">◎</span>
+
+                        <div>
+                            <strong>Des offres accessibles</strong>
+                            <p>Des solutions adaptées à votre budget.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <form class="contact-form" id="email-contact-form" action="https://formspree.io/f/mwvndkey" method="POST">
+                    <input type="hidden" name="_subject" value="Nouvelle demande depuis le portfolio de Nidhoimi">
+
+                    <div class="form-heading">
+                        <h3>Parlez-moi de votre projet</h3>
+                        <p>Les champs marqués d'un * sont obligatoires.</p>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="name">Votre nom *</label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Ex. : Amadou Diallo"
+                            autocomplete="name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">Votre téléphone</label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Votre numéro de téléphone"
+                            autocomplete="tel">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="service">Service souhaité *</label>
+
+                        <select id="service" name="service" required>
+
+                            <option value="">Choisissez une offre</option>
+
+                            <option value="Site vitrine">
+                                Site vitrine — 40 000 FCFA
+                            </option>
+
+                            <option value="Catalogue de produits">
+                                Catalogue de produits — 30 000 FCFA
+                            </option>
+
+                            <option value="Application de gestion">
+                                Application de gestion — 50 000 FCFA
+                            </option>
+
+                            <option value="Autre projet">
+                                Autre projet
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">Décrivez votre besoin *</label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="4"
+                            placeholder="Présentez votre activité et votre besoin..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <button type="submit" class="button button-primary form-submit">
+                        Envoyer par e-mail <span>→</span>
+                    </button>
+
+                    <p class="form-note">
+                        Votre demande sera envoyée via Formspree. Vous pouvez aussi me joindre directement sur WhatsApp.
+                    </p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         PIED DE PAGE
+    ========================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <a href="#accueil" class="logo footer-logo">
+                NIDHOIMI<span>.</span>
+            </a>
+
+            <p>
+                Des solutions numériques pensées pour votre activité.
+            </p>
+
+            <a href="#accueil" class="back-to-top">
+                Retour en haut ↑
+            </a>
+
+        </div>
+
+        <div class="container footer-bottom">
+
+            <p>
+                © <span id="current-year"></span> NIDHOIMI.
+                Tous droits réservés.
+            </p>
+
+            <p>Conçu avec soin.</p>
+
+        </div>
+
+    </footer>
+
+    <!-- Bouton WhatsApp flottant -->
+    <a class="floating-whatsapp"
+       href="https://wa.me/221763623959?text=Bonjour%20Nidhoimi%2C%20je%20vous%20contacte%20depuis%20votre%20portfolio."
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Contacter Nidhoimi sur WhatsApp">
+        <span class="floating-whatsapp-label">Discutons sur WhatsApp</span>
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M16.02 3C8.86 3 3.04 8.79 3.04 15.92c0 2.28.6 4.51 1.75 6.48L3 29l6.79-1.77a13.08 13.08 0 0 0 6.22 1.57h.01c7.16 0 12.98-5.79 12.98-12.92A12.82 12.82 0 0 0 25.2 6.7 12.92 12.92 0 0 0 16.02 3zm0 23.6h-.01a10.8 10.8 0 0 1-5.5-1.5l-.39-.23-4.03 1.05 1.08-3.9-.25-.4a10.64 10.64 0 0 1-1.65-5.7c0-5.9 4.82-10.7 10.75-10.7 2.87 0 5.57 1.11 7.6 3.13a10.6 10.6 0 0 1 3.15 7.57c0 5.9-4.82 10.68-10.75 10.68zm5.9-8.01c-.32-.16-1.9-.93-2.2-1.04-.3-.11-.51-.16-.73.16-.22.32-.84 1.04-1.03 1.25-.19.22-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.59-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.57.16-.19.22-.32.32-.54.11-.22.06-.4-.03-.56-.08-.16-.73-1.74-1-2.38-.26-.62-.53-.54-.73-.55l-.62-.01c-.22 0-.57.08-.87.4-.3.32-1.14 1.11-1.14 2.7 0 1.59 1.17 3.13 1.33 3.35.16.22 2.3 3.5 5.57 4.9.78.34 1.39.54 1.86.69.78.25 1.49.22 2.05.13.63-.1 1.9-.77 2.17-1.52.27-.75.27-1.39.19-1.52-.08-.13-.3-.22-.62-.38z"/>
+        </svg>
+    </a>
+
+</body>
+</html>
