@@ -1,4 +1,3 @@
-
 /* =========================================
    1. MENU MOBILE
 ========================================= */
@@ -51,52 +50,112 @@ if (currentYear) {
 
 
 /* =========================================
-   3. FORMULAIRE WHATSAPP
+   3. FORMULAIRE DE CONTACT FORMSPREE
 ========================================= */
 
-// IMPORTANT : remplace ce numéro par ton numéro WhatsApp.
-// Format international : indicatif du pays + numéro,
-// sans espaces, sans + et sans tirets.
-
-const whatsappNumber = "221763623959";
-
-const contactForm = document.querySelector("#contact-form");
+const contactForm = document.querySelector("#email-contact-form");
 
 if (contactForm) {
-    contactForm.addEventListener("submit", (event) => {
+    contactForm.addEventListener("submit", async (event) => {
         event.preventDefault();
 
-        const name = document.querySelector("#name")?.value.trim();
-        const phone = document.querySelector("#phone")?.value.trim();
-        const service = document.querySelector("#service")?.value;
-        const message = document.querySelector("#message")?.value.trim();
+        const submitButton = contactForm.querySelector(
+            'button[type="submit"]'
+        );
 
-        if (!name || !phone || !service || !message) {
-            alert("Veuillez remplir tous les champs du formulaire.");
+        // Vérifier les champs obligatoires.
+        if (!contactForm.checkValidity()) {
+            contactForm.reportValidity();
             return;
         }
 
-        if (whatsappNumber.includes("X")) {
-            alert(
-                "Le formulaire est presque prêt. Ajoutez votre numéro WhatsApp dans script.js."
-            );
+        // Éviter les doubles soumissions.
+        if (submitButton && submitButton.disabled) {
             return;
         }
 
-        const whatsappMessage = [
-            "Bonjour, je souhaite demander un devis.",
-            "",
-            `Nom : ${name}`,
-            `Téléphone : ${phone}`,
-            `Service souhaité : ${service}`,
-            "",
-            "Description du projet :",
-            message
-        ].join("\n");
+        const originalButtonText = submitButton
+            ? submitButton.innerHTML
+            : "";
 
-        const whatsappURL =
-            `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Envoi en cours...";
+        }
 
-        window.open(whatsappURL, "_blank", "noopener,noreferrer");
+        // Créer ou récupérer la zone de retour du formulaire.
+        let statusMessage = contactForm.querySelector(".form-status");
+
+        if (!statusMessage) {
+            statusMessage = document.createElement("p");
+            statusMessage.className = "form-status";
+            statusMessage.setAttribute("role", "status");
+            statusMessage.setAttribute("aria-live", "polite");
+
+            const formNote = contactForm.querySelector(".form-note");
+
+            if (formNote) {
+                formNote.insertAdjacentElement("afterend", statusMessage);
+            } else {
+                contactForm.appendChild(statusMessage);
+            }
+        }
+
+        statusMessage.textContent = "";
+        statusMessage.style.color = "";
+
+        try {
+            const formData = new FormData(contactForm);
+
+            const response = await fetch(contactForm.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    Accept: "application/json"
+                }
+            });
+
+            let result = {};
+
+            try {
+                result = await response.json();
+            } catch {
+                result = {};
+            }
+
+            if (response.ok) {
+                statusMessage.textContent =
+                    "Votre demande a bien été transmise. Merci !";
+
+                statusMessage.style.color = "#15803d";
+
+                contactForm.reset();
+            } else {
+                const errorDetails = Array.isArray(result.errors)
+                    ? result.errors
+                        .map((error) => error.message)
+                        .filter(Boolean)
+                        .join(" ")
+                    : "";
+
+                throw new Error(
+                    errorDetails ||
+                    "Formspree n'a pas accepté l'envoi. Veuillez réessayer."
+                );
+            }
+        } catch (error) {
+            console.error("Erreur d'envoi Formspree :", error);
+
+            statusMessage.textContent =
+                error.message ||
+                "Impossible d'envoyer votre demande. Vérifiez votre connexion et réessayez.";
+
+            statusMessage.style.color = "#b91c1c";
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+            }
+        }
     });
 }
